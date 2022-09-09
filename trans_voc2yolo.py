@@ -147,7 +147,7 @@ def translate_info(file_names: list, save_root: str, class_dict: dict, train_val
 
 def create_class_names(class_dict: dict):
     keys = class_dict.keys()
-    with open("./data/my_data_label.names", "w") as w:
+    with open("./yolov3/data/my_data_label.names", "w") as w:
         for index, k in enumerate(keys):
             if index + 1 == len(keys):
                 w.write(k)

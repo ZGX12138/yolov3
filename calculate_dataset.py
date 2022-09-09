@@ -8,7 +8,7 @@ import os
 
 train_annotation_dir = "./my_yolo_dataset/train/labels"
 val_annotation_dir = "./my_yolo_dataset/val/labels"
-classes_label = "./data/my_data_label.names"
+classes_label = "./yolov3/data/my_data_label.names"
 cfg_path = "./yolov3/cfg/yolov3-spp.cfg"
 
 assert os.path.exists(train_annotation_dir), "train_annotation_dir not exist!"
@@ -63,14 +63,14 @@ def change_and_create_cfg_file(classes_info, save_cfg_path="./cfg/my_yolov3.cfg"
 
 def main():
     # 统计训练集和验证集的数据并生成相应txt文件
-    train_txt_path = "data/my_train_data.txt"
-    val_txt_path = "data/my_val_data.txt"
+    train_txt_path = "./yolov3/data/my_train_data.txt"
+    val_txt_path = "./yolov3/data/my_val_data.txt"
     calculate_data_txt(train_txt_path, train_annotation_dir)
     calculate_data_txt(val_txt_path, val_annotation_dir)
 
     classes_info = [line.strip() for line in open(classes_label, "r").readlines() if len(line.strip()) > 0]
     # 创建data.data文件，记录classes个数, train以及val数据集文件(.txt)路径和label.names文件路径
-    create_data_data("./data/my_data.data", classes_label, train_txt_path, val_txt_path, classes_info)
+    create_data_data("./yolov3/data/my_data.data", classes_label, train_txt_path, val_txt_path, classes_info)
 
     # 根据yolov3-spp.cfg创建my_yolov3.cfg文件修改其中的predictor filters以及yolo classes参数(这两个参数是根据类别数改变的)
     change_and_create_cfg_file(classes_info)
