@@ -11,15 +11,15 @@ import shutil
 
 
 # voc数据集根目录以及版本
-voc_root = "/data/VOCdevkit"
-voc_version = "VOC2012"
+voc_root = "D:/mycode/github_repo/yolo-v2/PyTorch_YOLO-Family/data/VOCdevkit"
+voc_version = "VOC2007"
 
 # 转换的训练集以及验证集对应txt文件
 train_txt = "train.txt"
 val_txt = "val.txt"
 
 # 转换后的文件保存目录
-save_file_root = "./my_yolo_dataset"
+save_file_root = "./my_yolo_dataset_from2007"
 
 # label标签对应json文件
 label_json_path = './data/pascal_voc_classes.json'
