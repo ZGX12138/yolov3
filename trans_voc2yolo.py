@@ -22,7 +22,7 @@ val_txt = "val.txt"
 save_file_root = "./my_yolo_dataset"
 
 # label标签对应json文件
-label_json_path = './data/pascal_voc_classes.json'
+label_json_path = './yolov3/data/pascal_voc_classes.json'
 
 # 拼接出voc的images目录，xml目录，txt目录
 voc_images_path = os.path.join(voc_root, voc_version, "JPEGImages")
