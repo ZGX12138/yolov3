@@ -19,7 +19,7 @@ def train(hyp):
 
     wdir = "weights" + os.sep  # weights dir
     best = wdir + "best.pt"
-    results_file = "results{}.txt".format(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+    results_file = "output/results{}.txt".format(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 
     cfg = opt.cfg
     data = opt.data
@@ -273,12 +273,12 @@ if __name__ == '__main__':
     parser.add_argument('--hyp', type=str, default='cfg/hyp.yaml', help='hyperparameters path')
     parser.add_argument('--multi-scale', type=bool, default=True,
                         help='adjust (67%% - 150%%) img_size every 10 batches')
-    parser.add_argument('--img-size', type=int, default=512, help='test size')
+    parser.add_argument('--img-size', type=int, default=416, help='test size')
     parser.add_argument('--rect', action='store_true', help='rectangular training')
     parser.add_argument('--savebest', type=bool, default=False, help='only save best checkpoint')
     parser.add_argument('--notest', action='store_true', help='only test final epoch')
     parser.add_argument('--cache-images', action='store_true', help='cache images for faster training')
-    parser.add_argument('--weights', type=str, default='weights/yolov3-spp-ultralytics-512.pt',
+    parser.add_argument('--weights', type=str, default='weights/yolov3-spp-ultralytics-416.pt',
                         help='initial weights path')
     parser.add_argument('--name', default='', help='renames results.txt to results_name.txt if supplied')
     parser.add_argument('--device', default='cuda:0', help='device id (i.e. 0 or 0,1 or cpu)')
